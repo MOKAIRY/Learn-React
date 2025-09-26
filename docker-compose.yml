@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  react-facts:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PROJECT_NAME: react-facts
+    ports:
+      - "3001:5173"
+    volumes:
+      - ./react-facts:/app
+      - /app/node_modules
+
+  travel-journal:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PROJECT_NAME: travel-journal
+    ports:
+      - "3002:5173"
+    volumes:
+      - ./travel-journal:/app
+      - /app/node_modules
