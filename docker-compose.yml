@@ -24,3 +24,15 @@ services:
     volumes:
       - ./travel-journal:/app
       - /app/node_modules
+
+  chef-claude:
+      build:
+        context: .
+        dockerfile: Dockerfile
+        args:
+          PROJECT_NAME: chef-claude
+      ports:
+        - "3003:5173"
+      volumes:
+        - ./chef-claude:/app
+        - /app/node_modules
